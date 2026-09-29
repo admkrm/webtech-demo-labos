@@ -1,0 +1,63 @@
+/* stijl.css - oefening 2: modeloplossing (niet voor studenten) */
+
+body {
+  font-family: Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+/* 1. alle links in de navigatie */
+nav a {
+  color: crimson;
+}
+
+/* 2. alleen de paragrafen in de footer */
+footer p {
+  font-size: 0.875rem;
+}
+
+/* 3. alleen de lijstitems van het buitenste niveau van .rassen */
+.rassen > li {
+  outline: 2px solid crimson;
+}
+/* Typische fout: .rassen li -> ook de items van de binnenlijsten krijgen een
+   kader. Outline is gekozen omdat het niet erft en niet doorloopt naar de
+   kinderen; met color of font-weight zou je het verschil niet zien (2.6). */
+
+/* 4. de paragraaf onmiddellijk na elke h2 */
+h2 + p {
+  font-style: italic;
+}
+
+/* 5. elk oneven item in de lijst met openingsuren */
+.uren li:nth-child(odd) {
+  background-color: #f1e9dc;
+}
+
+/* 6. het laatste item in de lijst met openingsuren */
+.uren li:last-child {
+  color: crimson;
+}
+
+/* 7. de slogan en de intro tegelijk */
+.slogan,
+.intro {
+  color: darkslateblue;
+}
+
+/* 8. elke link in main bij hover of focus */
+main a:hover,
+main a:focus {
+  background-color: yellow;
+}
+
+/* ---- Lezen (antwoordmodel README) ----
+   a. header nav ul li a  -> elke link in de navigatie (dezelfde drie als bij 1;
+                             vier schakels te veel, nav a volstaat)
+   b. article > p         -> elke paragraaf die een direct kind is van article
+                             (alle p's in main hier; niet de slogan, die zit in header)
+   c. .uren li:nth-child(3) -> het derde item van de openingsuren: woensdag
+   d. h2 ~ p              -> elke p die na een h2 komt binnen dezelfde ouder:
+                             hier alle p's in article (ze staan allemaal na de eerste h2)
+   e. .rassen li:first-child -> elk li dat het eerste kind van zijn ouder is,
+                             ergens in .rassen: "Honden", én "Herders..." én
+                             "Europese korthaar" (de binnenlijsten tellen mee) */

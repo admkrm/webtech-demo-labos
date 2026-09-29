@@ -1,0 +1,103 @@
+/* stijl.css - referentie-CSS nabouw labo 2 (niet voor studenten) */
+
+:root {
+  --color-paper: #fbf7f0;
+  --color-ink: #2b2b2b;
+  --color-muted: #6b6b6b;
+  --color-accent: #b5451b;
+  --color-zebra: #f1e9dc;
+  --font-body: Verdana, sans-serif;
+  --font-heading: Georgia, serif;
+}
+
+/* === basis: alles wat erft, staat hier === */
+body {
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  line-height: 1.6;
+}
+
+/* === koppen === */
+h1, h2, h3 {
+  font-family: var(--font-heading);
+  font-weight: normal;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3rem;
+  color: var(--color-accent);
+}
+
+h2 {
+  font-size: 1.75rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+  color: var(--color-muted);
+}
+
+/* === header === */
+.slogan {
+  font-style: italic;
+  color: var(--color-muted);
+}
+
+nav a {
+  color: var(--color-accent);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+nav a:hover,
+nav a:focus {
+  color: var(--color-ink);
+  text-decoration: underline;
+}
+
+/* === tekst === */
+.intro {
+  font-size: 1.25rem;
+}
+
+main a {
+  color: var(--color-accent);
+}
+
+main a:hover,
+main a:focus {
+  background-color: var(--color-accent);
+  color: var(--color-paper);
+}
+
+strong {
+  color: var(--color-accent);
+}
+
+/* === de kaart === */
+.kaart li:nth-child(odd) {
+  background-color: var(--color-zebra);
+}
+
+.prijs {
+  color: var(--color-muted);
+  font-style: italic;
+}
+
+/* === footer === */
+footer {
+  color: var(--color-muted);
+  font-size: 0.875rem;
+  text-align: center;
+}
+
+footer a {
+  color: var(--color-muted);
+}
+
+footer a:hover,
+footer a:focus {
+  color: var(--color-accent);
+}
